@@ -1,29 +1,27 @@
-def numeroPortugues numero
-    #  Nós apenas queremos números entre 0 e 100.
-    if numero < 0
-        return 'Por favor, entre com um número maior ou igual a zero.'
-    end
-    if numero > 100
-        return 'Por favor, entre com um número menor ou igual a 100.'
+def portugueseNumbers(number)
+    # Nós apenas queremos números entre 0 e 100.
+    if (number < 0 or number > 100)
+        return 'Por favor, entre com um número válido (0 ... 100).'
     end
 
-    numExtenso = ''  #  Esta é a string que vamos retornar.
+    #  Esta é a string que vamos retornar.
+    numExtenso = ''  
 
     #  "falta" é quanto do número ainda falta para escrevermos.
     #  "escrevendo" é a parte que estamos escrevendo agora.
-    falta = numero
+    falta = number
     escrevendo = falta/100               #  Quantas centenas faltam escrever?
-    falta   = falta - escrevendo*100     #  Subtraia essas centenas.
+    falta = falta - escrevendo*100     #  Subtraia essas centenas.
 
     if escrevendo > 0
         return 'cem'
     end
 
     escrevendo = falta/10              #  Quantas dezenas faltam escrever?
-    falta  = falta - escrevendo*10     #  Subtraia essas dezenas.
+    falta = falta - escrevendo*10     #  Subtraia essas dezenas.
 
-    if escrevendo > 0
-        if escrevendo == 1  #  Oh-oh...
+    if (escrevendo > 0)
+        if (escrevendo == 1)  #  Oh-oh...
         #  Já que não podemos escrever "dez e dois",
         #  vamos fazer algo especial aqui
         if falta == 0
@@ -78,29 +76,29 @@ def numeroPortugues numero
 
     if escrevendo > 0
         if escrevendo == 1
-        numExtenso = numExtenso + 'um'
+            numExtenso = numExtenso + 'um'
         elsif escrevendo == 2
-        numExtenso = numExtenso + 'dois'
+            numExtenso = numExtenso + 'dois'
         elsif escrevendo == 3
-        numExtenso = numExtenso + 'três'
+            numExtenso = numExtenso + 'três'
         elsif escrevendo == 4
-        numExtenso = numExtenso + 'quatro'
+            numExtenso = numExtenso + 'quatro'
         elsif escrevendo == 5
-        numExtenso = numExtenso + 'cinco'
+            numExtenso = numExtenso + 'cinco'
         elsif escrevendo == 6
-        numExtenso = numExtenso + 'seis'
+            numExtenso = numExtenso + 'seis'
         elsif escrevendo == 7
-        numExtenso = numExtenso + 'sete'
+            numExtenso = numExtenso + 'sete'
         elsif escrevendo == 8
-        numExtenso = numExtenso + 'oito'
+            numExtenso = numExtenso + 'oito'
         elsif escrevendo == 9
-        numExtenso = numExtenso + 'nove'
+            numExtenso = numExtenso + 'nove'
         end
     end
 
     if numExtenso == ''
         #  A única forma de "numExtenso" estar vazia é
-        #  se o "numero" for 0
+        #  se o "number" for 0
         return 'zero'
     end
 
@@ -110,12 +108,13 @@ def numeroPortugues numero
     numExtenso
 end
   
-  puts numeroPortugues(  0)
-  puts numeroPortugues(  9)
-  puts numeroPortugues( 10)
-  puts numeroPortugues( 11)
-  puts numeroPortugues( 17)
-  puts numeroPortugues( 32)
-  puts numeroPortugues( 88)
-  puts numeroPortugues( 99)
-  puts numeroPortugues(100)
+puts portugueseNumbers(0)
+puts portugueseNumbers(9)
+puts portugueseNumbers(10)
+puts portugueseNumbers(11)
+puts portugueseNumbers(17)
+puts portugueseNumbers(32)
+puts portugueseNumbers(88)
+puts portugueseNumbers(99)
+puts portugueseNumbers(100)
+puts portugueseNumbers(120)
