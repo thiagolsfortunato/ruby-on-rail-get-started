@@ -12,11 +12,17 @@ puts 'Eu sou um vidente. Diga-me seu nome:'
 nome = gets.chomp.downcase
 if nome == 'thiago'
   puts 'Vejo coisas maravilhosas no seu futuro.'
-elif nome == 'eduardo'
+elsif nome == 'eduardo'
   puts 'Vai dar merda'
 else
   puts 'Seu futuro é... Ó, Deus! Olha a hora!'
   puts 'Eu tenho que ir, mil perdões!'
+end
+
+counter = 1
+until counter > 10
+  print counter
+  counter += 1
 end
 
 euSouChris  = true
@@ -45,3 +51,23 @@ while comando != 'tchau'
 end
 puts 'Volte logo!'
 
+count = 0
+loop do
+    print count
+    count += 1
+    break if count > 10
+end
+puts ''
+for i in 1..5
+    next if i % 2 == 0
+    print i
+end
+puts ''
+for i in 1 .. 10
+    print i
+end
+puts ''
+for i in 1 ... 11
+    print i
+end
+puts ''
